@@ -1,0 +1,238 @@
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh; /* Isso ajuda a centralizar verticalmente em relação à altura da tela */
+  margin: 0;
+}
+.container{
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin: auto; 
+  background-image: url("../images/transferir.jpg");
+  background-size: cover;
+  overflow: hidden;
+
+}
+
+.menu{
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  top:0;
+  height: 90px;
+  width: 100vw;
+  max-width:100%;
+  background-color: #000000;
+  color: #ffffff;
+  border-bottom: 5px solid #ffd700;
+  margin-bottom: 5rem;
+}
+
+.panel{
+  /* padding: 30px; */
+  /* margin-top: 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+ 
+}
+
+.square {
+  position: relative;
+  width: 100vw; /* Ajuste conforme necessário para controlar o tamanho inicial */
+  aspect-ratio: 1/1;
+  min-width: 50px;
+  max-width: 200px;
+  border: 1px solid black;
+  background-color: #14de9b;
+  overflow: hidden;
+  transition: background-image 0.5s ease;
+}
+
+.square img {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  min-width: 6rem; /* Tamanho mínimo da imagem */
+  min-height: 6rem; /* Tamanho mínimo da imagem */
+  max-width: 30rem; /* Tamanho máximo da imagem */
+  max-height: 30rem; /* Tamanho máximo da imagem */
+}
+
+
+.enemy{
+  background-color: #ffffff;
+  background-image: url("../images/donaldempe.png");
+  background-size:cover ;
+}
+
+.enemyAbatido img {
+width: 100%;
+height: 100%;
+max-width: 300px;
+max-height: 300px;
+object-fit: cover;
+display: block;
+background-image: url("../src/images/pato-donald-fd-300x300.png");
+background-size: cover;
+}
+
+
+
+.menu-lives img{
+  width: 5em;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.menu-lives{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second{
+  margin-top: 10px;
+}
+h2{
+  font-size: 1.1em;
+}
+.menu-time h2:nth-child(2),
+.menu-score h2:nth-child(2){
+  font-size: 1em;
+  margin-top: 1rem;
+}
+#restartButton {
+  
+  text-align: center;
+  /* margin: auto; */
+  /* margin-top: -70px;
+  margin-bottom: 5px; */
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 2px solid red;
+  
+}
+
+#restartButton:hover {
+  background-color: #45a049;
+}
+
+/* para tablets e celulares pequenos */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    background-image: url("../images/transferir.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .menu {
+    font-size: 1em;
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+  }
+
+  .panel {
+    max-width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .square {
+    width: 30vw;
+    aspect-ratio: 1/1;
+    min-width: 2em;
+    max-width: 5rem;
+    border: 1px solid black;
+    background-color: #14de9b;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .square img {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    min-width: 3rem;
+    max-height: 10em;
+  }
+
+  .menu-lives img {
+    width: 20px;
+  }
+
+  .second {
+    margin-top: 2px;
+  }
+
+  .menu-time h2:nth-child(2),
+  .menu-score h2:nth-child(2) {
+    margin-top: 0.3rem;
+  }
+}
+
+/* para tablets e celulares maiores */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .menu-lives img {
+    width: 30px; /* Ajuste o tamanho das imagens de vidas para tablets */
+  }
+
+  .menu {
+    height: 100px; /* Ajuste a altura do menu para tablets */
+  }
+
+  .square {
+    width: 20vw; /* Ajuste o tamanho inicial para tablets */
+    max-width: 150px; /* Defina um tamanho máximo para tablets */
+  }
+}
+
+/* para celulares maiores */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .menu-lives img {
+    width: 25px; /* Ajuste o tamanho das imagens de vidas para celulares maiores */
+  }
+
+  .menu {
+    height: 60px; /* Ajuste a altura do menu para celulares maiores */
+  }
+
+  .square {
+    width: 45vw; /* Ajuste o tamanho inicial para celulares maiores */
+    max-width: 120px; /* Defina um tamanho máximo para celulares maiores */
+  }
+}
